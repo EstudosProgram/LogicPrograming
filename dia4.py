@@ -111,7 +111,7 @@ elif idade >= 60:
 else: 
     print("Idade inválida.")
 
-# 4 Verificando se um Ano é Bissexto
+# # 4 Verificando se um Ano é Bissexto
 
 ano = int(input("Digite um ano: "))
 
@@ -120,7 +120,7 @@ if ano % 4 == 0 and (ano % 100 != 0 or ano % 400 == 0):
 else:
     print(ano,"não é bissexto.")
 
-# 5 Simulador de Caixa Eletrônico
+# # 5 Simulador de Caixa Eletrônico
 
 valor_saque = int(input("Digite o valor do saque: R$"))
 
@@ -161,4 +161,44 @@ else:
             print(f"{notas_5} x R$5")
         if notas_2 > 0:
             print(f"{notas_2} x R$2")
-            
+
+# Exercicios Extras
+# 1 Aprovando Empréstimo Bancário
+
+emprestimo = float(input("Digite o valor do empréstimo: R$"))
+renda_mensal = float(input("Digite o seu salário mensal: R$"))
+num_parcelas = int(input("Digite o número de parcelas: "))
+valor_parcela = emprestimo / num_parcelas
+
+if valor_parcela <= 0.3 * renda_mensal:
+    print(f"Empréstimo aprovado! O valor da parcela é R${valor_parcela:.2f} em {num_parcelas} parcelas.")
+else:
+    print(f"Empréstimo negado. O valor da parcela R${valor_parcela} excede 30% da sua renda mensal.")
+
+#  2 Jogo Pedra,Papelo ou Tesoura    
+
+import random
+
+opcoes = ["pedra", "papel", "tesoura"]
+computador = random.choice(opcoes)
+jogador = input("Escolha pedra, papel ou tesoura: ")
+if jogador not in opcoes:
+    print("Opção inválida. Por favor, escolha pedra, papel ou tesoura.")
+else:
+    if jogador == computador:
+        print(f"Empate! O computador também escolheu {computador}.")
+    elif (jogador == "pedra" and computador == "tesoura") or (jogador == "papel" and computador == "pedra") or (jogador == "tesoura" and computador == "papel"):
+        print(f"Parabéns! Você venceu! O computador escolheu {computador}.")
+    else:
+        print(f"Você perdeu! O computador escolheu {computador}.")
+
+# 3 Calculadora de Tarifas de Táxi
+
+tarifa = 4
+distancia = float(input("Digite a distância percorrida em km: "))
+
+if distancia < 0:
+    print("Distância inválida. Por favor, insira um valor positivo.")
+else:
+    preco_corrida = (distancia * 0.25) + tarifa
+    print(f"O preço da corrida é: R${preco_corrida:.2f}")
