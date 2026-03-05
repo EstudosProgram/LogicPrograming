@@ -55,5 +55,7 @@ user = int(input("Digite um número de 1 a 12 para obter o mês correspondente: 
 for i in range(len(meses)):
     if user == i + 1:
         print("O mês correspondente é:", meses[i])
+    else:
+        print("Número inválido. Por favor, digite um número entre 1 e 12.")
 
 # Desafios Extras
